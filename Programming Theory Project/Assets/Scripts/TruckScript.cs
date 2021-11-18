@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TruckScript : MonoBehaviour
 {
+    public GameObject slab;
+    public Transform pointLoading;
     public void LoadingSlabs()
     {
         for (float h = .1f; h <= .9f; h += .2f)

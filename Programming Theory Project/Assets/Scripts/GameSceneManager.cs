@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameSceneManager : MonoBehaviour
 {
-    public static GameSceneManager mainManager;
+    public static GameSceneManager instance;
 
     private int countSlab = 0;
     public int CountSlab
@@ -46,14 +46,11 @@ public class GameSceneManager : MonoBehaviour
     }
     private void Awake()
     {
-        if (mainManager != null)
+        if (instance != null)
         {
             Destroy(gameObject);
         }
-        else
-        {
-            mainManager = new GameSceneManager();
-        }
+        
         DontDestroyOnLoad(this);
     }
     public interface IInformer
